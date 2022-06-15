@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="latest"
+LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="1.2.2"
 
 # Versions
 ENV TERRAFORM_VERSION=1.2.2
