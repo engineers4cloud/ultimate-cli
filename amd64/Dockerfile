@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="1.2.3"
+LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="1.2.4"
 
 # Versions
 ENV TERRAFORM_VERSION=1.2.4
@@ -8,7 +8,6 @@ ENV TERRAFORM_VERSION=1.2.4
 # Tool Envs
 ENV USER_HOME_DIR=/opt/ultimate-cli
 ENV HOME=/opt/ultimate-cli
-#ENV CDK_HOME=/opt/ultimate-cli/cdk
 
 WORKDIR /opt/ultimate-cli
 
