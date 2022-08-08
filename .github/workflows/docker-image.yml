@@ -24,6 +24,15 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
         
+    - name: 1.2.2
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        file: ./amd64/1.2.2/Dockerfile
+        platforms: linux/amd64
+        tags: engineers4cloud/ultimate-cli:1.2.2
+        push: true
+        
     - name: 1.2.3
       uses: docker/build-push-action@v3
       with:
