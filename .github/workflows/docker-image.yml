@@ -24,12 +24,12 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
         
-    - name: Build and push image amd64
+    - name: 1.2.3
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: ./amd64/Dockerfile
+        file: ./amd64/1.2.3/Dockerfile
         platforms: linux/amd64
-        tags: engineers4cloud/ultimate-cli:1.2.6
+        tags: engineers4cloud/ultimate-cli:1.2.3
         push: true  
     
