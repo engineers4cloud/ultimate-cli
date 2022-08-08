@@ -49,5 +49,14 @@ jobs:
         file: ./amd64/1.2.6/Dockerfile
         platforms: linux/amd64
         tags: engineers4cloud/ultimate-cli:1.2.6
-        push: true     
+        push: true
+        
+    - name: latest
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        file: ./amd64/1.2.6/Dockerfile
+        platforms: linux/amd64
+        tags: engineers4cloud/ultimate-cli:latest
+        push: true    
     
