@@ -51,11 +51,20 @@ jobs:
         tags: engineers4cloud/ultimate-cli:1.2.6
         push: true
         
+    - name: 1.2.9
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        file: ./amd64/1.2.9/Dockerfile
+        platforms: linux/amd64
+        tags: engineers4cloud/ultimate-cli:1.2.9
+        push: true    
+        
     - name: latest
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: ./amd64/1.2.6/Dockerfile
+        file: ./amd64/1.2.9/Dockerfile
         platforms: linux/amd64
         tags: engineers4cloud/ultimate-cli:latest
         push: true    
