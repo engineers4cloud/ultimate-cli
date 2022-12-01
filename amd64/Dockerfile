@@ -1,9 +1,6 @@
 FROM alpine:latest
 
-LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="1.2.9"
-
-# Versions
-#ENV TERRAFORM_VERSION=1.2.9
+LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="latest"
 
 # Tool Envs
 ENV USER_HOME_DIR=/opt/ultimate-cli
