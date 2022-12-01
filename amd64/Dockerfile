@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL maintainer="m4rkus@engineers4cloud" description="ultimate-cli" version="1.2.9"
 
 # Versions
-ENV TERRAFORM_VERSION=1.2.9
+#ENV TERRAFORM_VERSION=1.2.9
 
 # Tool Envs
 ENV USER_HOME_DIR=/opt/ultimate-cli
@@ -32,7 +32,7 @@ RUN apk upgrade --available --no-cache \
     openssl
   
 # install terraform
-RUN TERRAFORM_LATEST=$(curl -sL "https://api.github.com/repos/hashicorp/terraform/releases/latest" | jq -r ".tag_name") && echo $TERRAFORM_LATEST
+RUN TERRAFORM_LATEST=$(curl -sL "https://api.github.com/repos/hashicorp/terraform/releases/latest" | jq -r ".tag_name") && TERRAFORM_VERSION="${TERRAFORM_LATEST:1}"
 RUN wget -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
 && unzip -d /tmp terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
 && mv /tmp/terraform /usr/local/bin \
