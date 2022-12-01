@@ -32,7 +32,7 @@ RUN apk upgrade --available --no-cache \
     openssl
   
 # install terraform
-RUN TERRAFORM_LATEST=$(curl -sL "https://api.github.com/repos/hashicorp/terraform/releases/latest" | jq -r ".tag_name") && TERRAFORM_VERSION="${TERRAFORM_LATEST:1}"
+RUN TERRAFORM_LATEST=$(curl -sL "https://api.github.com/repos/hashicorp/terraform/releases/latest" | jq -r ".tag_name") | cut -c2-10
 RUN wget -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
 && unzip -d /tmp terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
 && mv /tmp/terraform /usr/local/bin \
